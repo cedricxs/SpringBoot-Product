@@ -12,17 +12,17 @@ public class MainController {
 
     @GetMapping({"/", "/index"})
     public String index() {
-        return "index.html";
+        return "index";
     }
 
     @GetMapping("/elements")
     public String elements() {
-        return "elements.html";
+        return "elements";
     }
 
     @GetMapping("/generic")
     public String generic() {
-        return "generic.html";
+        return "generic";
     }
 
 
