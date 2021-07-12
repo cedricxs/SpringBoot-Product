@@ -2,6 +2,7 @@ package com.cedricxs.application.service;
 
 import com.cedricxs.application.bo.AddCommentBO;
 import com.cedricxs.application.dto.AddCommentResultDTO;
+import com.cedricxs.application.dto.GetCommentResultDTO;
 import com.cedricxs.application.exception.RepositoryException;
 
 /**
@@ -15,4 +16,10 @@ public interface CommentService {
      * @return
      */
     AddCommentResultDTO addComment(AddCommentBO addCommentBO) throws RepositoryException;
+
+    /**
+     * 获取所有评论
+     * @return
+     */
+    GetCommentResultDTO getAllComments();
 }

@@ -1,0 +1,1 @@
+nohup java -jar target/SpringBootExample-1.0-SNAPSHOT.jar &

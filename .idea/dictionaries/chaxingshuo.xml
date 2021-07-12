@@ -2,6 +2,11 @@
   <dictionary name="chaxingshuo">
     <words>
       <w>cedricxs</w>
+      <w>hdel</w>
+      <w>hget</w>
+      <w>hmget</w>
+      <w>hmset</w>
+      <w>hset</w>
     </words>
   </dictionary>
 </component>

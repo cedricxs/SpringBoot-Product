@@ -3,7 +3,7 @@ package com.cedricxs.application.utils;
 import com.cedricxs.application.bo.AddCommentBO;
 import com.cedricxs.application.dto.AddCommentDTO;
 import com.cedricxs.application.dto.AddCommentResultDTO;
-import com.cedricxs.application.po.CommentPO;
+import com.cedricxs.application.dto.CommentDTO;
 
 /**
  * @author chaxingshuo
@@ -11,7 +11,7 @@ import com.cedricxs.application.po.CommentPO;
  */
 public class CommentWrapper {
 
-    public static AddCommentBO wrapperCommentBO(AddCommentDTO addCommentDTO) {
+    public static AddCommentBO wrapperAddCommentBO(AddCommentDTO addCommentDTO) {
         AddCommentBO addCommentBO = AddCommentBO.builder()
                 .name(addCommentDTO.getName())
                 .email(addCommentDTO.getEmail())
@@ -21,7 +21,7 @@ public class CommentWrapper {
         return addCommentBO;
     }
 
-    public static AddCommentResultDTO wrapperCommentResultDTO(String name, String email, Integer category, String message) {
+    public static AddCommentResultDTO wrapperAddCommentResultDTO(String name, String email, Integer category, String message) {
         AddCommentResultDTO addCommentResultDTO = AddCommentResultDTO.builder()
                 .name(name)
                 .email(email)
@@ -30,4 +30,15 @@ public class CommentWrapper {
                 .build();
         return addCommentResultDTO;
     }
+
+    public static CommentDTO wrapperCommentDTO(String name, String email, Integer category, String message) {
+        CommentDTO commentDTO = CommentDTO.builder()
+                .name(name)
+                .email(email)
+                .category(category)
+                .message(message)
+                .build();
+        return commentDTO;
+    }
+
 }
