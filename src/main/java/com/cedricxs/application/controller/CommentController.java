@@ -9,7 +9,6 @@ import com.cedricxs.application.utils.CommentWrapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -25,7 +24,7 @@ public class CommentController {
     CommentService commentService;
 
     @PostMapping(path = "/comment")
-    public ResponseEntity<AddCommentResultDTO> addComment(@RequestBody AddCommentDTO addCommentDTO) throws RepositoryException {
+    public ResponseEntity<AddCommentResultDTO> addComment(AddCommentDTO addCommentDTO) throws RepositoryException {
         AddCommentBO addCommentBO = CommentWrapper.wrapperCommentBO(addCommentDTO);
         AddCommentResultDTO addCommentResultDTO = commentService.addComment(addCommentBO);
         ResponseEntity<AddCommentResultDTO> response = new ResponseEntity<>(addCommentResultDTO, HttpStatus.OK);
