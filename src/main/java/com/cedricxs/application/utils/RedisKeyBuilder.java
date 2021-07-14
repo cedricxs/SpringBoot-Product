@@ -12,9 +12,9 @@ public class RedisKeyBuilder {
 
     public static final String COMMENT_PO_KEY = "comment";
 
-    private static final MessageFormat COMMENT_PO_KEY_FORMAT = new MessageFormat("comment_{0}");
+    private static final String COMMENT_PO_KEY_FORMAT = "comment_{0}";
 
     public static String buildCommentPoKey(CommentPO commentPO) {
-        return COMMENT_PO_KEY_FORMAT.format(commentPO.getName());
+        return MessageFormat.format(COMMENT_PO_KEY_FORMAT, commentPO);
     }
 }

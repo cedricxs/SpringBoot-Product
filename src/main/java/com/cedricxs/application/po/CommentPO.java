@@ -3,6 +3,7 @@ package com.cedricxs.application.po;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Tolerate;
 
 /**
  * @author chaxingshuo
@@ -12,6 +13,10 @@ import lombok.ToString;
 @Builder
 @ToString
 public class CommentPO {
+
+    @Tolerate
+    public CommentPO() {
+    }
 
     private String name;
 
