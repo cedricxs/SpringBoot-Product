@@ -11,9 +11,9 @@
         <relativePath/>
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>SpringBootExample</artifactId>
+    <artifactId>SpringBoot-Product</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>Demo project for Spring Boot</description>
+    <description>product server</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -53,6 +53,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.69</version>
+        </dependency>
+        <dependency>
+            <groupId>hessian</groupId>
+            <artifactId>hessian</artifactId>
+            <version>3.2.1</version>
         </dependency>
     </dependencies>
     <build>

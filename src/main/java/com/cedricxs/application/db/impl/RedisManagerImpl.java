@@ -2,6 +2,7 @@ package com.cedricxs.application.db.impl;
 
 import com.cedricxs.application.db.RedisManager;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Component
+@Profile("dev")
 public class RedisManagerImpl implements RedisManager {
 
     @Resource

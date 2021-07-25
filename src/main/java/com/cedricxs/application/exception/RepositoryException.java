@@ -2,7 +2,7 @@ package com.cedricxs.application.exception;
 
 /**
  * @author chaxingshuo
- * @date 2021/07/11
+ * @date 2021/07/25
  */
 public class RepositoryException extends Exception {
 

@@ -1,6 +1,6 @@
 package com.cedricxs.application.utils;
 
-import com.cedricxs.application.po.CommentPO;
+import com.cedricxs.application.po.ProductPO;
 
 import java.text.MessageFormat;
 
@@ -10,11 +10,11 @@ import java.text.MessageFormat;
  */
 public class RedisKeyBuilder {
 
-    public static final String COMMENT_PO_KEY = "comment";
+    public static final String PRODUCT_PO_KEY = "product";
 
-    private static final String COMMENT_PO_KEY_FORMAT = "comment_{0}";
+    private static final String PRODUCT_PO_KEY_FORMAT = "product_{0}";
 
-    public static String buildCommentPoKey(CommentPO commentPO) {
-        return MessageFormat.format(COMMENT_PO_KEY_FORMAT, commentPO);
+    public static String buildProductPoKey(ProductPO productPO) {
+        return MessageFormat.format(PRODUCT_PO_KEY_FORMAT, productPO);
     }
 }

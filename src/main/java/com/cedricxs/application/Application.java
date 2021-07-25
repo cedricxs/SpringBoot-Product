@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author chaxingshuo
- * @date 2021/07/10
+ * @date 2021/07/25
  */
-@SpringBootApplication()
+@SpringBootApplication(scanBasePackages = {"com.cedricxs"})
 public class Application {
 
     public static void main(String[] args) {
