@@ -23,6 +23,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author chaxingshuo
  * @date 2021/07/25
+ * 压测结果 100qps -> 响应延迟300ms
+ *         1000qps -> 响应延迟5000ms
+ *         10000qps -> 响应延迟50000ms, 成功率下跌
  */
 @Slf4j
 @Component
@@ -44,17 +47,25 @@ public class RpcServer implements ApplicationContextAware, InitializingBean {
     @Value("${rpc.server.keepAliveTime:1000}")
     private Long keepAliveTime;
 
+    @Value("${rpc.server.workqueueSize:1024}")
+    private Integer workqueueSize;
+
     public void run() throws IOException {
         ServerSocket serverSocket = new ServerSocket(this.port);
         while (true) {
-            Socket socket = serverSocket.accept();
-            this.executor.execute(() -> {
-                try {
-                    this.accept(socket);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
+            try {
+                Socket socket = serverSocket.accept();
+                this.executor.execute(() -> {
+                    try {
+                        this.accept(socket);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        log.error("error when io rpc", e);
+                    }
+                });
+            } catch (IOException e) {
+                log.error("error when socket connection", e);
+            }
         }
     }
 
